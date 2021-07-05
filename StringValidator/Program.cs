@@ -11,16 +11,16 @@ namespace StringValidatorProgram
         static void Main(string[] args)
         {
             String data = "excel";
-            NullChecking checking = new NullChecking();
-            StringValidator validate = new StringValidator(checking);
+           
+            StringValidator validate = new StringValidator(new NullChecking());
             validate.IsValidString(data);
 
-            LengthChecking length = new LengthChecking();
-            StringValidator _length = new StringValidator(length);
+           
+            StringValidator _length = new StringValidator(new LengthChecking());
             _length.IsValidString(data);
 
-            StringStartsWith starts = new StringStartsWith();
-            StringValidator _starts = new StringValidator(starts);
+           
+            StringValidator _starts = new StringValidator(new StringStartsWith());
             _starts.IsValidString(data);
         }
     }
